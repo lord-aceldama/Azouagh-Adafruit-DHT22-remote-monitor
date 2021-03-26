@@ -3,7 +3,6 @@ import socket
 import argparse
 
 
-DEFAULT_HOST = '127.0.0.1'  # The server's hostname or IP address
 DEFAULT_PORT = 60606  # The port used by the server
 
 
@@ -21,14 +20,12 @@ def run(host: str, port: int):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument("host", help="The remote hostname/ip to connect to.")
     parser.add_argument(
-        "host", default=DEFAULT_HOST,
-        help="The remote hostname/ip to connect to. (default: '%(default)s')"
-    )
-    parser.add_argument(
-        "port", type=int, default=DEFAULT_PORT,
+        "-p", "--port", required=False, type=int, default=DEFAULT_PORT,
         help="The remote port to connect to. (default: '%(default)s')"
     )
-    args = parser.parse_args()
+    #args = parser.parse_args()
+    args = parser.parse_args(["192.168.1.5"])
 
     run(args.host, args.port)
