@@ -14,7 +14,7 @@ def run(host: str, port: int):
             # You can send literally anything and you'll get the data as a reply
             s.sendall(b"ping")
             data = s.recv(1024)
-            print('Received', repr(data))
+            print('Received:', data.decode("utf-8"))
 
             time.sleep(5)
 

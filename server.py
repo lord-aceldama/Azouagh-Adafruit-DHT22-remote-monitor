@@ -23,7 +23,7 @@ def poll_sensor() -> bytes:
     humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
     result = ""
     if None not in [humidity, temperature]:
-        result = f"OK, {DateTime.now().strftime('H:M:S')}, T:{temperature:0.1f}C, RH:{humidity:0.1f}%"
+        result = f"OK, {DateTime.now().strftime('%H:%M:%S')}, T:{temperature:0.1f}C, RH:{humidity:0.1f}%"
     else:
         result = "FAIL, Sensor failure. Check wiring."
 
