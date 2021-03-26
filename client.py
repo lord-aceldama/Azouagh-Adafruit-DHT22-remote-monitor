@@ -2,8 +2,6 @@ import time
 import socket
 import argparse
 
-from datetime import datetime as DateTime
-
 
 DEFAULT_HOST = '127.0.0.1'  # The server's hostname or IP address
 DEFAULT_PORT = 60606  # The port used by the server

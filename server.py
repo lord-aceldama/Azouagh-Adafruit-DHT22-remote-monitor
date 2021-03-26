@@ -1,5 +1,3 @@
-
-
 import select
 import socket
 import argparse
