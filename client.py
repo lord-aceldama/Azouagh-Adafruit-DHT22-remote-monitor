@@ -25,7 +25,7 @@ if __name__ == '__main__':
         "-p", "--port", required=False, type=int, default=DEFAULT_PORT,
         help="The remote port to connect to. (default: %(default)s)"
     )
-    #args = parser.parse_args()
-    args = parser.parse_args(["192.168.1.5"])
+    args = parser.parse_args()
+    #args = parser.parse_args(["192.168.1.5"])
 
     run(args.host, args.port)

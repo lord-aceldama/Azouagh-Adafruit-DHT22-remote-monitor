@@ -40,10 +40,9 @@ def run(port: int):
     server.bind(("localhost", port))
     server.listen(5)
     inputs = [server]
-    outputs = []
 
     while inputs:
-        r, w, fail = select.select(inputs, outputs, inputs)
+        r, w, fail = select.select(inputs, inputs, inputs)
 
         # Handle RX
         s: Optional[socket.socket] = None
@@ -58,23 +57,21 @@ def run(port: int):
                 connection.sendall(bytes("OK, Hello", "utf-8"))
             else:
                 # Incoming transmission
-                data: bytes = s.recv((2 ** 10) * 10)
-                if data:
-                    # Parse data
-                    print(f"INFO::RX> Received {len(data)} bytes of data")
-                    ds = data.decode('utf-8')
-                    print(f"INFO::RX> Data('{ds}')")
-                    if s not in outputs:
-                        outputs.append(s)
+                try:
+                    data: bytes = s.recv((2 ** 10) * 10)
+                    if data:
+                        # Parse data
+                        print(f"INFO::RX> Received {len(data)} bytes of data")
+                        ds = data.decode('utf-8')
+                        print(f"INFO::RX> Data('{ds}')")
 
-                    # Transmit sensor reading
-                    sd = poll_sensor()
-                    print(f"INFO::TX> Data('{sd.decode('utf-8')}')")
-                    s.sendall(sd)
-                else:
+                        # Transmit sensor reading
+                        sd = poll_sensor()
+                        print(f"INFO::TX> Data('{sd.decode('utf-8')}')")
+                        s.sendall(sd)
+                except:
                     # Null data
-                    if s in outputs:
-                        outputs.remove(s)
+                    print(f"INFO> Remote connection closed.")
                     inputs.remove(s)
                     s.close()
         time.sleep(0.5)
