@@ -1,4 +1,3 @@
-import select
 import time
 import socket
 import argparse
@@ -6,15 +5,16 @@ import argparse
 from datetime import datetime as DateTime
 
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
-PORT = 60606  # The port used by the server
+DEFAULT_HOST = '127.0.0.1'  # The server's hostname or IP address
+DEFAULT_PORT = 60606  # The port used by the server
 
 
-def run():
+def run(host: str, port: int):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((HOST, PORT))
+        s.connect((host, port))
         while True:
-            s.sendall(b'send anything')
+            # You can send literally anything and you'll get the data as a reply
+            s.sendall(b"ping")
             data = s.recv(1024)
             print('Received', repr(data))
 
@@ -22,4 +22,15 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "host", default=DEFAULT_HOST,
+        help="The remote hostname/ip to connect to. (default: '%(default)s')"
+    )
+    parser.add_argument(
+        "port", type=int, default=DEFAULT_PORT,
+        help="The remote port to connect to. (default: '%(default)s')"
+    )
+    args = parser.parse_args()
+
+    run(args.host, args.port)

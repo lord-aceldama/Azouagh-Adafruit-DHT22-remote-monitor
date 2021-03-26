@@ -32,7 +32,7 @@ def poll_sensor() -> bytes:
     return bytes(result, "utf-8")
 
 
-def run(port: int = DEFAULT_PORT):
+def run(port: int):
     """ Start the web server and listen on the given port. """
 
     print(f"Starting server on 'localhost' listening on port {port}...")
@@ -82,4 +82,7 @@ def run(port: int = DEFAULT_PORT):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    run()
+    parser.add_argument("port", type=int, default=DEFAULT_PORT, help="The port to listen on. (default: '%(default)s')")
+    args = parser.parse_args()
+
+    run(args.port)
