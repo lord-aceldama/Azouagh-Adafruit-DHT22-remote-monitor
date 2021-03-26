@@ -1,3 +1,4 @@
+import time
 import select
 import socket
 import argparse
@@ -68,7 +69,7 @@ def run(port: int):
 
                     # Transmit sensor reading
                     sd = poll_sensor()
-                    print(f"INFO::TX> Data('{sd}')")
+                    print(f"INFO::TX> Data('{sd.decode('utf-8')}')")
                     s.sendall(sd)
                 else:
                     # Null data
@@ -76,11 +77,16 @@ def run(port: int):
                         outputs.remove(s)
                     inputs.remove(s)
                     s.close()
+        time.sleep(0.5)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("port", type=int, default=DEFAULT_PORT, help="The port to listen on. (default: '%(default)s')")
+    parser.add_argument(
+        "-p", "--port", type=int, default=DEFAULT_PORT,
+        help="The port to listen on. (default: '%(default)s')"
+    )
+    #args = parser.parse_args([f"{DEFAULT_PORT}"])
     args = parser.parse_args()
 
     run(args.port)
