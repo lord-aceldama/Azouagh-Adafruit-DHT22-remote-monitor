@@ -16,6 +16,7 @@ DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 4
 
 # Server
+DEFAULT_HOST = "0.0.0.0"
 DEFAULT_PORT = 60606
 
 
@@ -34,10 +35,10 @@ def poll_sensor() -> bytes:
 def run(port: int):
     """ Start the web server and listen on the given port. """
 
-    print(f"Starting server on 'localhost' listening on port {port}...")
+    print(f"Starting server on '{DEFAULT_HOST}' listening on port {port}...")
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.setblocking(False)
-    server.bind(("localhost", port))
+    server.bind((DEFAULT_HOST, port))
     server.listen(5)
     inputs = [server]
 
