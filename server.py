@@ -82,7 +82,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-p", "--port", type=int, default=DEFAULT_PORT,
-        help="The port to listen on. (default: '%(default)s')"
+        help="The port to listen on. (default: %(default)s)"
     )
     args = parser.parse_args()
 
