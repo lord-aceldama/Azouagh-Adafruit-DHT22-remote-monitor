@@ -3,6 +3,36 @@ This repo contains two sets of scripts for the purpose of monitoring the adafrui
 pi. For testing purposes a dummy driver was also created.
 
 
+## Software requirements:
+ - Python3
+ - git
+ - pip3
+
+
+## Setup:
+On a command line, clone the repo using the following command:
+```shell script
+git clone https://github.com/lord-aceldama/Azouagh-Adafruit-DHT22-remote-monitor
+``` 
+
+Once the repo is downloaded, change into the new directory. 
+```shell script
+cd Azouagh-Adafruit-DHT22-remote-monitor
+``` 
+
+Once the repo is downloaded, you may wish to create a virtual environment for the script to run in. If you do not wish 
+to create a virtual environment, skip this step, otherwise run:
+```shell script
+python3 -m venv venv
+. venv/bin/activate
+``` 
+
+You can now install the necessary pips by running:
+```shell script
+pip3 install -r requirements.txt
+```
+
+
 ## Repo index:
 ### Dummy driver
 #### Script(s):
