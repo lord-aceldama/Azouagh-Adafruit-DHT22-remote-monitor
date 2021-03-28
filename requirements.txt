@@ -1,0 +1,2 @@
+Adafruit_DHT ~= 1.4.0
+python-telegram-bot ~= 13.4.1
