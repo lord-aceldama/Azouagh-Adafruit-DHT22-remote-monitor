@@ -74,3 +74,8 @@ optional arguments:
   -h, --help            show this help message and exit
   -p PORT, --port PORT  The port to listen on. (default: 60606)
 ```
+
+### Setup instructions
+This document.
+#### File(s):
+ - `README.md` to run on the raspberry pi (`81` lines of code)
