@@ -44,8 +44,27 @@ pip3 install -r requirements.txt
 Client's first request was a solution to monitor the sensor readings remotely. As using a web server was not possible
 the logical solution was to use TCP sockets to relay the data across a network (or internet). 
 #### Script(s):
- - `client.py` to run on the raspberry pi (`32` lines of code)
- - `server.py` to run on a remote machine (`90` lines of code)
+ - `client.py` to run on the raspberry pi (`31` lines of code)
+ - `server.py` to run on a remote machine (`89` lines of code)
+#### Usage:
+```shell script
+usage: client.py [-h] [-p PORT] host
+
+positional arguments:
+  host                  The remote hostname/ip to connect to.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PORT, --port PORT  The remote port to connect to. (default: 60606)
+```
+
+```shell script
+usage: server.py [-h] [-p PORT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PORT, --port PORT  The port to listen on. (default: '60606')
+```
 
  
 ### Telegram bot
@@ -55,3 +74,7 @@ script requires an API key (token) in order to work. for information on how to r
 please follow the tutorial [here](https://core.telegram.org/bots#6-botfather).
 #### Script(s):
  - `telegram-bot.py` (`197` lines of code)
+#### Usage:
+```shell script
+
+```

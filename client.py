@@ -26,7 +26,6 @@ if __name__ == '__main__':
         "-p", "--port", required=False, type=int, default=DEFAULT_PORT,
         help="The remote port to connect to. (default: %(default)s)"
     )
-    #args = parser.parse_args()
-    args = parser.parse_args(["x.aceldama.uk"])
+    args = parser.parse_args()
 
     run(args.host, args.port)
