@@ -3,7 +3,7 @@ This repo contains two sets of scripts for the purpose of monitoring the adafrui
 pi. For testing purposes a dummy driver was also created.
 
 
-
+## Repo index:
 ### Dummy driver
 #### Script(s):
  - `ada_dht.py` to test scripts without the actual sensor present (`6` lines of code)
