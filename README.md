@@ -74,7 +74,3 @@ script requires an API key (token) in order to work. for information on how to r
 please follow the tutorial [here](https://core.telegram.org/bots#6-botfather).
 #### Script(s):
  - `telegram-bot.py` (`197` lines of code)
-#### Usage:
-```shell script
-
-```
