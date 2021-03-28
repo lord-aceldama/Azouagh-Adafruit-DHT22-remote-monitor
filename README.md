@@ -38,6 +38,15 @@ pip3 install -r requirements.txt
 #### Script(s):
  - `ada_dht.py` to test scripts without the actual sensor present (`6` lines of code)
 
+ 
+### Telegram bot
+#### Overview
+Client's next request was to receive data to 'their app', but as no such app existed i suggested Telegram as an app. The
+script requires an API key (token) in order to work. for information on how to register your bot and obtain your token,
+please follow the tutorial [here](https://core.telegram.org/bots#6-botfather).
+#### Script(s):
+ - `telegram-bot.py` (`197` lines of code)
+
 
 ### TCP socket client/Server
 #### Overview
@@ -65,12 +74,3 @@ optional arguments:
   -h, --help            show this help message and exit
   -p PORT, --port PORT  The port to listen on. (default: '60606')
 ```
-
- 
-### Telegram bot
-#### Overview
-Client's next request was to receive data to 'their app', but as no such app existed i suggested Telegram as an app. The
-script requires an API key (token) in order to work. for information on how to register your bot and obtain your token,
-please follow the tutorial [here](https://core.telegram.org/bots#6-botfather).
-#### Script(s):
- - `telegram-bot.py` (`197` lines of code)
