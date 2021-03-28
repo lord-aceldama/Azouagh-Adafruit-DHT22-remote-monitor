@@ -1,6 +1,6 @@
 # Adafruit-DHT22 sensor remote monitor
-This repo contains two sets of scripts for the purpose of monitoring the adafruit DHT22 sensor connected to a raspberry 
-pi. For testing purposes a dummy driver was also created.
+This repo contains two sets of scripts for the purpose of monitoring an [Adafruit DHT22](https://www.adafruit.com/product/385)
+sensor connected to a raspberry pi. For testing purposes a dummy driver was also created.
 
 
 ## Software requirements:
