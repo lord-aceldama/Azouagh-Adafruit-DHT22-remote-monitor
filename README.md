@@ -3,16 +3,16 @@ This repo contains two sets of scripts for the purpose of monitoring the adafrui
 pi. For testing purposes a dummy driver was also created.
 
 ## Dummy driver
-The script(s) used are:
+### Script(s):
  - `ada_dht.py` (`6` lines of code)
 
-## Client/Server
-The script(s) used are
+## TCP socket client/Server
+### Script(s):
  - `client.py` (`32` lines of code)
  - `server.py` (`90` lines of code)
  
 ## Telegram bot
-The script(s) used are
+### Script(s):
  - `telegram-bot.py` (`197` lines of code)
 
 
