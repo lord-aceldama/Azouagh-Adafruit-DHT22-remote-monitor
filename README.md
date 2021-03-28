@@ -72,5 +72,5 @@ usage: server.py [-h] [-p PORT]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p PORT, --port PORT  The port to listen on. (default: '60606')
+  -p PORT, --port PORT  The port to listen on. (default: 60606)
 ```
